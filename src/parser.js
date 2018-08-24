@@ -39,7 +39,7 @@ var RE_UnixEntry = new RegExp(
 
     // year (for non-recent standard format)
     // or time (for numeric or recent standard format)
-    + "(\\d+(?::\\d+)?)\\s*"
+    + "(\\d+(?::\\d+)?)\\s"
 
     //+ "(\\S*)(\\s*.*)"
     + "(.*)"

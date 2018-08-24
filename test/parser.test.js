@@ -497,7 +497,8 @@ drwx------    2 1001     1001         4096 Oct 19 16:17 project2\r\n";
 -drwxr-x---   2 userName alternc      4096 Aug 22 03:45 .\r\n\
 -drwxr-x---   5 userName alternc      4096 Aug 22 03:45 ..\r\n\
 --rw-r-----   1 userName alternc       460 Aug 22 03:45 test1\r\n\
---rw-r-----   1 userName alternc       560 Aug 22 03:47 test2\r\n";
+--rw-r-----   1 userName alternc       560 Aug 22 03:47 test2\r\n\
+--rw-r-----   1 userName alternc       560 Aug 22 03:49   spaceTest  \n";
 
     var unixEntries2 = [
       {
@@ -527,6 +528,28 @@ drwx------    2 1001     1001         4096 Oct 19 16:17 project2\r\n";
         size: 560,
         name: "test2",
         time: +new Date("Aug 22 03:47 " + new Date().getFullYear()),
+        owner: "userName",
+        group: "alternc",
+
+        userReadPerm: true,
+        userWritePerm: true,
+        userExecPerm: false,
+
+        groupReadPerm: true,
+        groupWritePerm: false,
+        groupExecPerm: false,
+
+        otherReadPerm: false,
+        otherWritePerm: false,
+        otherExecPerm: false
+      },
+      {
+        //Testing for whitespace at start and end of line, valid in unix
+        //line: --rw-r-----   1 userName alternc       560 Aug 22 03:49  spaceTest "
+        type: 0,
+        size: 560,
+        name: "  spaceTest  ",
+        time: +new Date("Aug 22 03:49 " + new Date().getFullYear()),
         owner: "userName",
         group: "alternc",
 
